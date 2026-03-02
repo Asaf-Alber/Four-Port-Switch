@@ -1,0 +1,63 @@
+****************************************
+Report : power
+        -hier
+        -significant_digits 2
+Design : switch_4port
+Version: V-2023.12-SP3
+Date   : Tue Jan 20 20:50:42 2026
+****************************************
+Information: Activity propagation will be performed for scenario FUNC_Fast.
+Information: Doing activity propagation for mode 'FUNC' and corner 'Fast' with effort level 'medium'. (POW-024)
+Information: Timer-derived activity data is cached on scenario FUNC_Fast (POW-052)
+Infomation: Fast mode activity propagation power.rtl_activity_annotation setup is ignored. Always use accurate mode.
+Information: Running switching activity propagation with 4 threads!
+
+ **** Information : No. of simulation cycles = 6 ****
+Mode: FUNC
+Corner: Fast
+Scenario: FUNC_Fast
+Voltage: 0.75
+Temperature: 125.00
+
+Voltage Unit         : 1V
+Capacitance Unit     : 1fF
+Time Unit            : 1ns
+Temperature Unit     : 1C
+Dynamic Power Unit   : 1pW
+Leakage Power Unit   : 1pW
+
+Switched supply net power scaling:
+scaling for leakage power
+
+Supply nets:
+VDD (power) probability 1.00 (default)
+VSS (ground) probability 1.00 (default)
+Warning: Power table extrapolation (extrapolation mode) for port A4 on cell gen_ports[0].port_inst/my_fifo/ctmi_1684 for parameter Tinp. Lowest table value = 0.016000, highest table value = 1.024000, value = 0.000420 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Y on cell gen_ports[0].port_inst/my_fifo/ctmi_1684 for parameter Tinp. Lowest table value = 0.016000, highest table value = 1.024000, value = 0.000420 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port D on cell gen_ports[0].port_inst/my_fifo/mem_reg[0][13] for parameter Tinp. Lowest table value = inf, highest table value = inf, value = 0.066185 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CLK on cell gen_ports[0].port_inst/my_fifo/mem_reg[0][13] for parameter Tinp. Lowest table value = 0.016000, highest table value = 1.024000, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Q on cell gen_ports[0].port_inst/my_fifo/mem_reg[0][13] for parameter Tinp. Lowest table value = 0.016000, highest table value = 1.024000, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port QN on cell gen_ports[0].port_inst/my_fifo/mem_reg[0][13] for parameter Tinp. Lowest table value = 0.016000, highest table value = 1.024000, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port QN on cell gen_ports[0].port_inst/my_fifo/mem_reg[0][13] for parameter Cout. Lowest table value = 0.000100, highest table value = 0.008000, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port D on cell gen_ports[0].port_inst/my_fifo/mem_reg[0][12] for parameter Tinp. Lowest table value = inf, highest table value = inf, value = 0.066967 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port CLK on cell gen_ports[0].port_inst/my_fifo/mem_reg[0][12] for parameter Tinp. Lowest table value = 0.016000, highest table value = 1.024000, value = 0.000000 (POW-046)
+Warning: Power table extrapolation (extrapolation mode) for port Q on cell gen_ports[0].port_inst/my_fifo/mem_reg[0][12] for parameter Tinp. Lowest table value = 0.016000, highest table value = 1.024000, value = 0.000000 (POW-046)
+Note - message 'POW-046' limit (10) exceeded. Remainder will be suppressed.
+
+
+Hierarchy                                                  Internal Power        Switching Power          Leakage Power            Total Power       %
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+switch_4port                                                     2.73e+08               5.80e+06               1.82e+08               4.60e+08    100.00
+  gen_ports[0].port_inst (switch_port_00000004_00000004_00000008_0)
+                                                                 6.73e+07               1.03e+06               4.22e+07               1.11e+08     24.00
+    my_fifo (fifo_00000010_8_0)                                  5.71e+07               6.34e+05               3.72e+07               9.49e+07     85.85
+  gen_ports[1].port_inst (switch_port_00000004_00000004_00000008_1)
+                                                                 6.70e+07               1.00e+06               4.23e+07               1.10e+08     23.95
+    my_fifo (fifo_00000010_8_1)                                  5.69e+07               6.26e+05               3.75e+07               9.50e+07     86.20
+  gen_ports[2].port_inst (switch_port_00000004_00000004_00000008_2)
+                                                                 6.71e+07               1.03e+06               4.25e+07               1.11e+08     24.02
+    my_fifo (fifo_00000010_8_2)                                  5.70e+07               6.61e+05               3.78e+07               9.55e+07     86.33
+  gen_ports[3].port_inst (switch_port_00000004_00000004_00000008)
+                                                                 6.73e+07               1.02e+06               4.25e+07               1.11e+08     24.08
+    my_fifo (fifo_00000010_8)                                    5.71e+07               6.57e+05               3.78e+07               9.56e+07     86.23
+1

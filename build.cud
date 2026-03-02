@@ -1,0 +1,39 @@
+# ------------------------------
+# Types / packages (must be first)
+# ------------------------------
+packet_data.sv
+
+# ------------------------------
+# Interfaces (depend on packet type)
+# ------------------------------
+port_if.sv
+port_if_synth.sv
+
+# ------------------------------
+# Gate-level DUT netlist
+# ------------------------------
+outputs_cg/switch_4port_gate.v
+
+# ------------------------------
+# Wrapper (TB interface -> flat DUT ports)
+# ------------------------------
+switch_4port_gate_wrap.sv
+
+# ------------------------------
+# TB / verification components
+# ------------------------------
+component_base.sv
+sequencer.sv
+driver.sv
+monitor.sv
+agent.sv
+checker.sv
+packet_vc.sv
+
+# ------------------------------
+# Tests / top
+# ------------------------------
+tb_cov.sv
+vc_test.sv
+partA_test.sv
+switch_test.sv

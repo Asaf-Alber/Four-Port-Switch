@@ -1,0 +1,46 @@
+****************************************
+Report : power
+        -hier
+        -significant_digits 2
+Design : switch_4port
+Version: V-2023.12-SP3
+Date   : Tue Jan 20 20:50:42 2026
+****************************************
+Information: Propagated activity on scenario FUNC_Slow identical to that on FUNC_Fast (POW-006)
+Mode: FUNC
+Corner: Slow
+Scenario: FUNC_Slow
+Voltage: 0.75
+Temperature: 125.00
+
+Voltage Unit         : 1V
+Capacitance Unit     : 1fF
+Time Unit            : 1ns
+Temperature Unit     : 1C
+Dynamic Power Unit   : 1pW
+Leakage Power Unit   : 1pW
+
+Switched supply net power scaling:
+scaling for leakage power
+
+Supply nets:
+VDD (power) probability 1.00 (default)
+VSS (ground) probability 1.00 (default)
+
+
+Hierarchy                                                  Internal Power        Switching Power          Leakage Power            Total Power       %
+---------------------------------------------------------------------------------------------------------------------------------------------------------
+switch_4port                                                     2.73e+08               6.18e+06               1.82e+08               4.61e+08    100.00
+  gen_ports[0].port_inst (switch_port_00000004_00000004_00000008_0)
+                                                                 6.73e+07               1.09e+06               4.22e+07               1.11e+08     24.00
+    my_fifo (fifo_00000010_8_0)                                  5.71e+07               6.70e+05               3.72e+07               9.49e+07     85.83
+  gen_ports[1].port_inst (switch_port_00000004_00000004_00000008_1)
+                                                                 6.70e+07               1.06e+06               4.23e+07               1.10e+08     23.94
+    my_fifo (fifo_00000010_8_1)                                  5.69e+07               6.61e+05               3.75e+07               9.51e+07     86.18
+  gen_ports[2].port_inst (switch_port_00000004_00000004_00000008_2)
+                                                                 6.71e+07               1.09e+06               4.25e+07               1.11e+08     24.01
+    my_fifo (fifo_00000010_8_2)                                  5.70e+07               7.01e+05               3.78e+07               9.55e+07     86.31
+  gen_ports[3].port_inst (switch_port_00000004_00000004_00000008)
+                                                                 6.73e+07               1.08e+06               4.25e+07               1.11e+08     24.08
+    my_fifo (fifo_00000010_8)                                    5.71e+07               6.95e+05               3.78e+07               9.57e+07     86.22
+1

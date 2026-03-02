@@ -1,0 +1,30 @@
+****************************************
+Report : user_units
+Design : switch_4port
+Version: V-2023.12-SP3
+Date   : Tue Jan 20 20:52:44 2026
+****************************************
+
+Input Units (set by technology library)
+----------------------------------------------
+time                         : 1.00ns
+resistance                   : 1.00MOhm
+capacitance                  : 1.00fF
+voltage                      : 1.00V
+current                      : 1.00uA
+power                        : 1.00pW
+length                       : 1.00um
+energy                       : 1.00pj/t
+
+Output Units (set by technology library)
+----------------------------------------------
+time                         : 1.00ns
+resistance                   : 1.00MOhm
+capacitance                  : 1.00fF
+voltage                      : 1.00V
+current                      : 1.00uA
+power                        : 1.00pW
+length                       : 1.00um
+energy                       : 1.00pj/t
+
+1

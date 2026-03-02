@@ -1,0 +1,43 @@
+****************************************
+Report : area
+Design : switch_4port
+Version: V-2023.12-SP3
+Date   : Tue Jan 20 20:50:42 2026
+****************************************
+
+Number of ports:                          493
+Number of nets:                          2573
+Number of cells:                         2096
+Number of combinational cells:           1468
+Number of sequential cells:               628
+Number of macros/black boxes:               0
+Number of buf/inv:                        216
+Number of references:                      37
+
+Combinational area:                   3705.67
+Buf/Inv area:                          387.32
+Noncombinational area:                5432.07
+Macro/Black Box area:                    0.00
+
+Total cell area:                      9137.75
+
+Hierarchical area distribution
+------------------------------
+
+                                  Global cell area                  Local cell area
+                                  -------------------------------------------------------------
+Hierarchical cell                 Absolute      Percent  Combi-       Noncombi-    Black-
+                                  Total         Total    national     national     boxes         Design
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+switch_4port                           9137.75    100.0       671.45        34.56          0.00  switch_4port
+gen_ports[0].port_inst                 2106.85     23.1        89.20       158.84          0.00  switch_port_00000004_00000004_00000008_0
+gen_ports[0].port_inst/my_fifo         1858.81     20.3       666.37      1192.44          0.00  fifo_00000010_8_0
+gen_ports[1].port_inst                 2105.07     23.0        86.41       157.32          0.00  switch_port_00000004_00000004_00000008_1
+gen_ports[1].port_inst/my_fifo         1861.35     20.4       668.91      1192.44          0.00  fifo_00000010_8_1
+gen_ports[2].port_inst                 2108.12     23.1        88.44       155.79          0.00  switch_port_00000004_00000004_00000008_2
+gen_ports[2].port_inst/my_fifo         1863.89     20.4       671.45      1192.44          0.00  fifo_00000010_8_2
+gen_ports[3].port_inst                 2111.68     23.1        92.00       155.79          0.00  switch_port_00000004_00000004_00000008
+gen_ports[3].port_inst/my_fifo         1863.89     20.4       671.45      1192.44          0.00  fifo_00000010_8
+-----------------------------------------------------------------------------------------------------------------------------------------------------------------
+Total                                                        3705.67      5432.07          0.00
+1

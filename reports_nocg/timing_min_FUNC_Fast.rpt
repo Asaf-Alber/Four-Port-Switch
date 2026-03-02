@@ -1,0 +1,652 @@
+****************************************
+Report : timing
+        -path_type full
+        -delay_type min
+        -max_paths 20
+        -report_by design
+        -nosplit
+Design : switch_4port
+Version: V-2023.12-SP3
+Date   : Tue Jan 20 20:50:42 2026
+****************************************
+
+  Startpoint: port1.source_in[3] (input port clocked by clk)
+  Endpoint: gen_ports[1].port_inst/my_fifo/mem_reg[6][15] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port1.source_in[3] (inout)                                      0.00      0.00 f
+  gen_ports[1].port_inst/my_fifo/ctmi_1727/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[1].port_inst/my_fifo/mem_reg[6][15]/D (SDFFX1_RVT)    0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[1].port_inst/my_fifo/mem_reg[6][15]/CLK (SDFFX1_RVT)   0.00     0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.15
+
+
+
+  Startpoint: port1.data_in[2] (input port clocked by clk)
+  Endpoint: gen_ports[1].port_inst/my_fifo/mem_reg[5][2] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port1.data_in[2] (inout)                                        0.00      0.00 f
+  gen_ports[1].port_inst/my_fifo/ctmi_1724/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[1].port_inst/my_fifo/mem_reg[5][2]/D (SDFFX1_RVT)     0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[1].port_inst/my_fifo/mem_reg[5][2]/CLK (SDFFX1_RVT)   0.00      0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.15
+
+
+
+  Startpoint: port3.source_in[2] (input port clocked by clk)
+  Endpoint: gen_ports[3].port_inst/my_fifo/mem_reg[7][14] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port3.source_in[2] (inout)                                      0.00      0.00 f
+  gen_ports[3].port_inst/my_fifo/ctmi_1748/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[3].port_inst/my_fifo/mem_reg[7][14]/D (SDFFX1_RVT)    0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[3].port_inst/my_fifo/mem_reg[7][14]/CLK (SDFFX1_RVT)   0.00     0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.15
+
+
+
+  Startpoint: port1.source_in[2] (input port clocked by clk)
+  Endpoint: gen_ports[1].port_inst/my_fifo/mem_reg[6][14] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port1.source_in[2] (inout)                                      0.00      0.00 f
+  gen_ports[1].port_inst/my_fifo/ctmi_1730/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[1].port_inst/my_fifo/mem_reg[6][14]/D (SDFFX1_RVT)    0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[1].port_inst/my_fifo/mem_reg[6][14]/CLK (SDFFX1_RVT)   0.00     0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port3.target_in[0] (input port clocked by clk)
+  Endpoint: gen_ports[3].port_inst/my_fifo/mem_reg[7][8] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port3.target_in[0] (inout)                                      0.00      0.00 f
+  gen_ports[3].port_inst/my_fifo/ctmi_1754/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[3].port_inst/my_fifo/mem_reg[7][8]/D (SDFFX1_RVT)     0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[3].port_inst/my_fifo/mem_reg[7][8]/CLK (SDFFX1_RVT)   0.00      0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port3.data_in[6] (input port clocked by clk)
+  Endpoint: gen_ports[3].port_inst/my_fifo/mem_reg[6][6] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port3.data_in[6] (inout)                                        0.00      0.00 f
+  gen_ports[3].port_inst/my_fifo/ctmi_1738/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[3].port_inst/my_fifo/mem_reg[6][6]/D (SDFFX1_RVT)     0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[3].port_inst/my_fifo/mem_reg[6][6]/CLK (SDFFX1_RVT)   0.00      0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port3.data_in[6] (input port clocked by clk)
+  Endpoint: gen_ports[3].port_inst/my_fifo/mem_reg[5][6] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port3.data_in[6] (inout)                                        0.00      0.00 f
+  gen_ports[3].port_inst/my_fifo/ctmi_1720/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[3].port_inst/my_fifo/mem_reg[5][6]/D (SDFFX1_RVT)     0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[3].port_inst/my_fifo/mem_reg[5][6]/CLK (SDFFX1_RVT)   0.00      0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port1.data_in[6] (input port clocked by clk)
+  Endpoint: gen_ports[1].port_inst/my_fifo/mem_reg[5][6] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port1.data_in[6] (inout)                                        0.00      0.00 f
+  gen_ports[1].port_inst/my_fifo/ctmi_1720/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[1].port_inst/my_fifo/mem_reg[5][6]/D (SDFFX1_RVT)     0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[1].port_inst/my_fifo/mem_reg[5][6]/CLK (SDFFX1_RVT)   0.00      0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port1.source_in[2] (input port clocked by clk)
+  Endpoint: gen_ports[1].port_inst/my_fifo/mem_reg[0][14] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port1.source_in[2] (inout)                                      0.00      0.00 f
+  gen_ports[1].port_inst/my_fifo/ctmi_1624/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[1].port_inst/my_fifo/mem_reg[0][14]/D (SDFFX1_RVT)    0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[1].port_inst/my_fifo/mem_reg[0][14]/CLK (SDFFX1_RVT)   0.00     0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port2.source_in[1] (input port clocked by clk)
+  Endpoint: gen_ports[2].port_inst/my_fifo/mem_reg[1][13] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port2.source_in[1] (inout)                                      0.00      0.00 f
+  gen_ports[2].port_inst/my_fifo/ctmi_1643/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[2].port_inst/my_fifo/mem_reg[1][13]/D (SDFFX1_RVT)    0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[2].port_inst/my_fifo/mem_reg[1][13]/CLK (SDFFX1_RVT)   0.00     0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port3.data_in[4] (input port clocked by clk)
+  Endpoint: gen_ports[3].port_inst/my_fifo/mem_reg[0][4] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port3.data_in[4] (inout)                                        0.00      0.00 f
+  gen_ports[3].port_inst/my_fifo/ctmi_1634/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[3].port_inst/my_fifo/mem_reg[0][4]/D (SDFFX1_RVT)     0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[3].port_inst/my_fifo/mem_reg[0][4]/CLK (SDFFX1_RVT)   0.00      0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port2.data_in[5] (input port clocked by clk)
+  Endpoint: gen_ports[2].port_inst/my_fifo/mem_reg[6][5] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port2.data_in[5] (inout)                                        0.00      0.00 f
+  gen_ports[2].port_inst/my_fifo/ctmi_1739/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[2].port_inst/my_fifo/mem_reg[6][5]/D (SDFFX1_RVT)     0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[2].port_inst/my_fifo/mem_reg[6][5]/CLK (SDFFX1_RVT)   0.00      0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port1.data_in[4] (input port clocked by clk)
+  Endpoint: gen_ports[1].port_inst/my_fifo/mem_reg[7][4] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port1.data_in[4] (inout)                                        0.00      0.00 f
+  gen_ports[1].port_inst/my_fifo/ctmi_1758/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[1].port_inst/my_fifo/mem_reg[7][4]/D (SDFFX1_RVT)     0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[1].port_inst/my_fifo/mem_reg[7][4]/CLK (SDFFX1_RVT)   0.00      0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port1.data_in[3] (input port clocked by clk)
+  Endpoint: gen_ports[1].port_inst/my_fifo/mem_reg[1][3] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port1.data_in[3] (inout)                                        0.00      0.00 f
+  gen_ports[1].port_inst/my_fifo/ctmi_1653/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[1].port_inst/my_fifo/mem_reg[1][3]/D (SDFFX1_RVT)     0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[1].port_inst/my_fifo/mem_reg[1][3]/CLK (SDFFX1_RVT)   0.00      0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port1.source_in[3] (input port clocked by clk)
+  Endpoint: gen_ports[1].port_inst/my_fifo/mem_reg[5][15] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port1.source_in[3] (inout)                                      0.00      0.00 f
+  gen_ports[1].port_inst/my_fifo/ctmi_1709/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[1].port_inst/my_fifo/mem_reg[5][15]/D (SDFFX1_RVT)    0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[1].port_inst/my_fifo/mem_reg[5][15]/CLK (SDFFX1_RVT)   0.00     0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port2.target_in[3] (input port clocked by clk)
+  Endpoint: gen_ports[2].port_inst/my_fifo/mem_reg[2][11] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port2.target_in[3] (inout)                                      0.00      0.00 f
+  gen_ports[2].port_inst/my_fifo/ctmi_1663/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[2].port_inst/my_fifo/mem_reg[2][11]/D (SDFFX1_RVT)    0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[2].port_inst/my_fifo/mem_reg[2][11]/CLK (SDFFX1_RVT)   0.00     0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port3.data_in[1] (input port clocked by clk)
+  Endpoint: gen_ports[3].port_inst/my_fifo/mem_reg[6][1] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port3.data_in[1] (inout)                                        0.00      0.00 f
+  gen_ports[3].port_inst/my_fifo/ctmi_1743/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[3].port_inst/my_fifo/mem_reg[6][1]/D (SDFFX1_RVT)     0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[3].port_inst/my_fifo/mem_reg[6][1]/CLK (SDFFX1_RVT)   0.00      0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port2.data_in[7] (input port clocked by clk)
+  Endpoint: gen_ports[2].port_inst/my_fifo/mem_reg[7][7] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port2.data_in[7] (inout)                                        0.00      0.00 f
+  gen_ports[2].port_inst/my_fifo/ctmi_1755/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[2].port_inst/my_fifo/mem_reg[7][7]/D (SDFFX1_RVT)     0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[2].port_inst/my_fifo/mem_reg[7][7]/CLK (SDFFX1_RVT)   0.00      0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port1.data_in[0] (input port clocked by clk)
+  Endpoint: gen_ports[1].port_inst/my_fifo/mem_reg[7][0] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port1.data_in[0] (inout)                                        0.00      0.00 f
+  gen_ports[1].port_inst/my_fifo/ctmi_1762/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[1].port_inst/my_fifo/mem_reg[7][0]/D (SDFFX1_RVT)     0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[1].port_inst/my_fifo/mem_reg[7][0]/CLK (SDFFX1_RVT)   0.00      0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+
+  Startpoint: port3.target_in[3] (input port clocked by clk)
+  Endpoint: gen_ports[3].port_inst/my_fifo/mem_reg[6][11] (rising edge-triggered flip-flop clocked by clk)
+  Mode: FUNC
+  Corner: Fast
+  Scenario: FUNC_Fast
+  Path Group: **in2reg_default**
+  Path Type: min
+
+  Point                                                           Incr      Path  
+  ---------------------------------------------------------------------------------------
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  input external delay                                            0.00      0.00 f
+  port3.target_in[3] (inout)                                      0.00      0.00 f
+  gen_ports[3].port_inst/my_fifo/ctmi_1733/Y (AO22X1_RVT)         0.09      0.09 f
+  gen_ports[3].port_inst/my_fifo/mem_reg[6][11]/D (SDFFX1_RVT)    0.00      0.09 f
+  data arrival time                                                         0.09
+
+  clock clk (rise edge)                                           0.00      0.00
+  clock network delay (ideal)                                     0.00      0.00
+  gen_ports[3].port_inst/my_fifo/mem_reg[6][11]/CLK (SDFFX1_RVT)   0.00     0.00 r
+  clock uncertainty                                               0.05      0.05
+  library hold time                                              -0.12     -0.07
+  data required time                                                       -0.07
+  ---------------------------------------------------------------------------------------
+  data required time                                                       -0.07
+  data arrival time                                                        -0.09
+  ---------------------------------------------------------------------------------------
+  slack (MET)                                                               0.16
+
+
+1
