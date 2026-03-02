@@ -1,0 +1,16 @@
+# build/sim folders
+HDL_LIBRARIES/
+log/
+
+# generated outputs / reports (adjust if you have different names)
+outputs_*/
+reports_*/
+
+# tool-generated files
+*.mr
+*.pvl
+*.cksum
+*.log
+
+# outputs
+fc_output.txt
