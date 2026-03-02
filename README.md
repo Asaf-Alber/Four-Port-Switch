@@ -39,8 +39,6 @@ Each port operates independently while arbitration resolves output contention fa
 
 ## RTL Block Diagram
 
-## RTL Block Diagram
-
 ```mermaid
 flowchart LR
 
