@@ -53,7 +53,6 @@ Each input port contains:
 
 ```systemverilog
 ready_in = !fifo_full;
-```
 
 - Strict valid/ready handshake  
 - Structurally prevents overflow  
@@ -67,11 +66,11 @@ States:
 - `ROUTE`
 - `TRANSMIT`
 
+```markdown
 Multicast support is implemented using a dynamic target mask:
 
 ```systemverilog
 remaining_targets <= remaining_targets & ~grant_in;
-```
 
 This enables partial multicast completion without head-of-line blocking.
 
