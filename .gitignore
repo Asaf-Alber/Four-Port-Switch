@@ -2,7 +2,7 @@
 HDL_LIBRARIES/
 log/
 
-# generated outputs / reports (adjust if you have different names)
+# generated outputs / reports
 outputs_*/
 reports_*/
 
@@ -11,6 +11,12 @@ reports_*/
 *.pvl
 *.cksum
 *.log
+*.cud
 
-# outputs
+# tool outputs
 fc_output.txt
+build.cud
+
+# OS noise
+.DS_Store
+Thumbs.db
