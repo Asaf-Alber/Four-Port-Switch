@@ -37,6 +37,27 @@ The design follows an **Input-Buffered Switching Architecture**:
 
 Each port operates independently while arbitration resolves output contention fairly and deterministically.
 
+## RTL Block Diagram
+
+```mermaid
+flowchart LR
+    subgraph DUT["switch_4port (DUT)"]
+        P0["switch_port 0\n+ FIFO"]
+        P1["switch_port 1\n+ FIFO"]
+        P2["switch_port 2\n+ FIFO"]
+        P3["switch_port 3\n+ FIFO"]
+
+        ARB["Round-Robin Arbiter"]
+        XBAR["Crossbar / Routing Logic"]
+
+        P0 --> ARB
+        P1 --> ARB
+        P2 --> ARB
+        P3 --> ARB
+
+        ARB --> XBAR
+    end
+```
 ---
 
 ## 1.2 Port Controller (`switch_port.sv`)
@@ -134,6 +155,26 @@ Features:
 ---
 
 # 3. Verification Environment (Stage B)
+
+## Verification Architecture
+
+```mermaid
+flowchart LR
+    subgraph TB["Testbench"]
+        SEQ["Sequencer\n(Packet Generator)"]
+        DRV["Driver\n(BFM)"]
+        MON["Monitor"]
+        SB["Scoreboard"]
+        COV["Coverage"]
+
+        SEQ --> DRV
+        MON --> SB
+        MON --> COV
+    end
+
+    DRV -->|valid/data/source/target| DUT["switch_4port (DUT)"]
+    DUT -->|outputs| MON
+```
 
 A modular layered SystemVerilog verification architecture was implemented.
 
