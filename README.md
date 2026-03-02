@@ -47,12 +47,13 @@ Each input port contains:
 - Synchronous First-Word Fall-Through (FWFT) FIFO  
 - 16-bit packet width  
 - Depth of 8 entries  
-- Immediate header visibility for arbitration (zero-cycle inspection latency)
+- Immediate header visibility for arbitration  
 
 ### Flow Control
 
 ```systemverilog
 ready_in = !fifo_full;
+```
 
 - Strict valid/ready handshake  
 - Structurally prevents overflow  
@@ -66,11 +67,11 @@ States:
 - `ROUTE`
 - `TRANSMIT`
 
-```markdown
 Multicast support is implemented using a dynamic target mask:
 
 ```systemverilog
 remaining_targets <= remaining_targets & ~grant_in;
+```
 
 This enables partial multicast completion without head-of-line blocking.
 
@@ -88,7 +89,7 @@ Combinational logic detects:
 - Self-loop packets (`source & target ≠ 0`)  
 - Zero-target packets  
 
-Illegal packets are flushed using a synthetic grant mechanism to prevent deadlock and buffer blocking.
+Illegal packets are flushed using a synthetic grant mechanism to prevent deadlock.
 
 ---
 
@@ -125,7 +126,7 @@ Packet structure:
 Features:
 
 - Automatic one-hot encoding (`1 << port_index`)  
-- Static packet tagging for traceability  
+- Static packet tagging  
 - Built-in protocol constraints  
 - Deep-copy support for scoreboard integrity  
 - Fully CRV-ready  
@@ -157,7 +158,7 @@ Driver uses a static semaphore:
 static semaphore drive_sem = new(4);
 ```
 
-This enables all four ports to inject packets in the same clock cycle, generating maximum theoretical contention.
+This enables all four ports to inject packets in the same clock cycle, generating maximum contention.
 
 ---
 
@@ -173,27 +174,7 @@ This guarantees correctness regardless of arbitration reordering.
 
 ---
 
-## 3.4 Dual-Phase Verification Strategy
-
-### Phase 1 – Directed FIFO Saturation
-
-- Forces FIFOs to FULL state  
-- Validates backpressure logic  
-- Confirms overflow protection  
-- Proves structural No-Drop policy  
-
-### Phase 2 – Constrained-Random Regression
-
-Traffic distribution:
-- 34% Unicast  
-- 33% Multicast  
-- 33% Broadcast  
-
-All ports active simultaneously to maximize arbitration stress.
-
----
-
-## 3.5 Verification Results
+## 3.4 Verification Results
 
 - 488 / 488 transactions matched  
 - 0 mismatches  
@@ -206,8 +187,8 @@ Verified properties:
 - No packet loss  
 - No data corruption  
 - No starvation  
-- Fair arbitration under saturation  
-- Correct recovery from mid-flight reset  
+- Fair arbitration  
+- Correct reset recovery  
 
 ---
 
@@ -217,14 +198,7 @@ Technology: SAED 90nm / 32nm
 Tool: Synopsys Design Compiler  
 Target Frequency: 100 MHz  
 
-Two configurations evaluated:
-
-- Baseline  
-- Automatic Clock Gating  
-
----
-
-## 4.1 Timing Results
+## Timing Results
 
 | Configuration | Fmax | Worst Setup Slack | Worst Hold Slack |
 |--------------|------|------------------|-----------------|
@@ -233,60 +207,33 @@ Two configurations evaluated:
 
 All constraints met with positive margins.
 
----
+## Power & Area Optimization
 
-## 4.2 Area Optimization
-
-Clock gating results:
+Clock gating achieved:
 
 - 13.6% area reduction  
 - 26% leaf cell reduction  
 - 41% combinational logic reduction  
-- 98% gating efficiency  
+- 64% internal power reduction  
+- 41% total power reduction  
 
-Feedback multiplexers replaced with integrated clock gating cells.
-
----
-
-## 4.3 Power Analysis
-
-| Metric | Improvement (Clock Gating) |
-|--------|---------------------------|
-| Internal Power | -64% |
-| Total Power | -41% |
-| Leakage | -9% |
-
-Power reduction achieved with negligible timing penalty.
-
----
-
-## 4.4 Gate-Level Verification
-
-- SDF back-annotation  
-- Negative-edge stimulus driving for setup margin  
-- Safe reset de-assertion strategy  
-- Netlist wrapper for escaped hierarchy handling  
-
-Full gate-level regression passed with zero mismatches.
+Gate-level regression passed with full SDF back-annotation.
 
 ---
 
 # 5. Technical Skills Demonstrated
 
-This project demonstrates proficiency in:
-
 - RTL micro-architecture design  
-- FSM design and protocol handling  
-- Backpressure-based flow control  
-- Arbitration algorithm implementation  
-- Multicast routing logic  
+- FSM implementation  
+- Backpressure flow control  
+- Arbitration logic design  
+- Multicast routing  
 - Assertion-based verification  
-- Constrained-random verification methodology  
-- Scoreboard architecture  
-- Functional and code coverage closure  
+- Constrained-random methodology  
+- Coverage closure  
 - Clock gating optimization  
 - Timing / Area / Power trade-off analysis  
-- Gate-level simulation and SDF timing validation  
+- Gate-level simulation  
 
 ---
 
@@ -308,8 +255,4 @@ dc_shell -f run.tcl
 
 ```bash
 vcs +define+GLS ...
-<<<<<<< HEAD
 ```
-=======
-```
->>>>>>> 8528adb (Final professional README)
