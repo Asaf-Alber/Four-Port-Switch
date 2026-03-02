@@ -42,51 +42,47 @@ Each port operates independently while arbitration resolves output contention fa
 ```mermaid
 flowchart LR
 
-    %% ===== INPUT PORTS =====
-    subgraph INPUTS["Input Ports (switch_port)"]
-        direction TB
-        P0["Port 0 \n FIFO + FSM"]
-        P1["Port 1 \n FIFO + FSM"]
-        P2["Port 2 \n FIFO + FSM"]
-        P3["Port 3 \n FIFO + FSM"]
-    end
+  %% INPUT PORTS (force vertical alignment)
+  subgraph INPUTS["Input Ports (switch_port)"]
+    direction TB
+    P0["Port 0<br/>FIFO + FSM"]
+    P1["Port 1<br/>FIFO + FSM"]
+    P2["Port 2<br/>FIFO + FSM"]
+    P3["Port 3<br/>FIFO + FSM"]
+  end
 
-    %% ===== ARBITER =====
-    ARB["Round-Robin Arbiter"]
+  ARB["Round-Robin Arbiter"]
+  XBAR["Crossbar / Routing Matrix"]
 
-    %% ===== CROSSBAR =====
-    XBAR["Crossbar / Routing Matrix"]
+  subgraph OUTPUTS["Output Ports"]
+    direction TB
+    O0["Out 0"]
+    O1["Out 1"]
+    O2["Out 2"]
+    O3["Out 3"]
+  end
 
-    %% ===== OUTPUTS =====
-    subgraph OUTPUTS["Output Ports"]
-        direction TB
-        O0["Out 0"]
-        O1["Out 1"]
-        O2["Out 2"]
-        O3["Out 3"]
-    end
+  %% CONTROL (requests + grants)
+  P0 -->|req| ARB
+  P1 -->|req| ARB
+  P2 -->|req| ARB
+  P3 -->|req| ARB
 
-    %% ---- CONTROL PATH ----
-    P0 -->|req| ARB
-    P1 -->|req| ARB
-    P2 -->|req| ARB
-    P3 -->|req| ARB
+  ARB -->|grant| P0
+  ARB -->|grant| P1
+  ARB -->|grant| P2
+  ARB -->|grant| P3
 
-    ARB -->|grant| P0
-    ARB -->|grant| P1
-    ARB -->|grant| P2
-    ARB -->|grant| P3
+  %% DATA PATH (keep simple; avoid pulling one node)
+  P0 -->|data| XBAR
+  P1 -->|data| XBAR
+  P2 -->|data| XBAR
+  P3 -->|data| XBAR
 
-    %% ---- DATA PATH ----
-    P0 -->|data| XBAR
-    P1 -->|data| XBAR
-    P2 -->|data| XBAR
-    P3 -->|data| XBAR
-
-    XBAR --> O0
-    XBAR --> O1
-    XBAR --> O2
-    XBAR --> O3
+  XBAR --> O0
+  XBAR --> O1
+  XBAR --> O2
+  XBAR --> O3
 ```
 ---
 
