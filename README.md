@@ -387,11 +387,14 @@ make -f scripts/Makefile report
 ## Synthesis
 
 ```bash
-dc_shell -f run.tcl
+dc_shell -f scripts/run.tcl
 ```
 
 ## Gate-Level Simulation
 
 ```bash
-vcs +define+GLS ...
+make -f scripts/Makefile clean
+make -f scripts/Makefile comp CUD=scripts/build.cud USE_SDF=1
+make -f scripts/Makefile run
+make -f scripts/Makefile report
 ```
