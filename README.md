@@ -249,7 +249,69 @@ This guarantees correctness regardless of arbitration reordering.
 - 0 mismatches  
 - 100% Functional Coverage  
 - 100% RTL Line Coverage  
-- All SVA protocol checks passed  
+- All SVA protocol checks passed
+
+---
+
+### Coverage Evidence
+
+#### Functional Coverage
+
+Functional coverage was implemented using covergroups at the transaction and FSM levels.
+
+Coverage goals included:
+
+- All packet types (SINGLE / MULTICAST / BROADCAST)
+- All source ports (0–3)
+- All valid target mask combinations
+- FIFO empty / full transitions
+- All FSM states and transitions
+- Arbitration under full contention
+- Cross coverage between source × target × packet type
+
+Final Functional Coverage: **100%**
+
+![Functional Coverage](verification_results/functional_coverage.jpeg)
+
+---
+
+#### RTL Code Coverage
+
+RTL code coverage was collected at line and branch level.
+
+Coverage goals included:
+
+- 100% line coverage
+- All conditional branches exercised
+- All FSM states reached
+- All arbitration paths activated
+- Illegal packet handling logic exercised
+
+Final RTL Line Coverage: **100%**
+
+![Code Coverage](verification_results/code_coverage.jpeg)
+
+---
+
+#### Assertion-Based Verification (SVA)
+
+SystemVerilog Assertions were embedded in the RTL and verification environment to validate protocol correctness and safety properties.
+
+Verified properties included:
+
+- No packet loss
+- No data corruption
+- Proper valid/ready handshake behavior
+- No illegal grant conditions
+- Correct reset recovery behavior
+
+All assertions passed during regression.
+
+![Assertions](verification_results/assertions.jpeg)
+
+---
+
+Coverage closure was achieved through iterative refinement of constrained-random scenarios until all coverage bins were exercised.
 
 Verified properties:
 
