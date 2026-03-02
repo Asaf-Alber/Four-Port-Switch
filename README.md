@@ -39,52 +39,56 @@ Each port operates independently while arbitration resolves output contention fa
 
 ## RTL Block Diagram
 
+## RTL Block Diagram
+
 ```mermaid
 flowchart LR
-  %% ====== INPUT SIDE ======
-  subgraph IN["Input Ports (switch_port)"]
-    P0["Port 0\nFIFO + FSM"]
-    P1["Port 1\nFIFO + FSM"]
-    P2["Port 2\nFIFO + FSM"]
-    P3["Port 3\nFIFO + FSM"]
-  end
 
-  %% ====== CONTROL ======
-  ARB["Round-Robin Arbiter\n(per-output selection)"]
+    %% ===== INPUT PORTS =====
+    subgraph INPUTS["Input Ports (switch_port)"]
+        direction TB
+        P0["Port 0\nFIFO + FSM"]
+        P1["Port 1\nFIFO + FSM"]
+        P2["Port 2\nFIFO + FSM"]
+        P3["Port 3\nFIFO + FSM"]
+    end
 
-  %% ====== DATA PATH ======
-  XBAR["Crossbar / Routing Matrix"]
+    %% ===== ARBITER =====
+    ARB["Round-Robin Arbiter"]
 
-  %% ====== OUTPUT SIDE ======
-  subgraph OUT["Output Ports"]
-    O0["Out 0"]
-    O1["Out 1"]
-    O2["Out 2"]
-    O3["Out 3"]
-  end
+    %% ===== CROSSBAR =====
+    XBAR["Crossbar / Routing Matrix"]
 
-  %% Requests (control)
-  P0 -->|request| ARB
-  P1 -->|request| ARB
-  P2 -->|request| ARB
-  P3 -->|request| ARB
+    %% ===== OUTPUTS =====
+    subgraph OUTPUTS["Output Ports"]
+        direction TB
+        O0["Out 0"]
+        O1["Out 1"]
+        O2["Out 2"]
+        O3["Out 3"]
+    end
 
-  %% Grants (control)
-  ARB -->|grant| P0
-  ARB -->|grant| P1
-  ARB -->|grant| P2
-  ARB -->|grant| P3
+    %% ---- CONTROL PATH ----
+    P0 -->|req| ARB
+    P1 -->|req| ARB
+    P2 -->|req| ARB
+    P3 -->|req| ARB
 
-  %% Data path
-  P0 -->|data| XBAR
-  P1 -->|data| XBAR
-  P2 -->|data| XBAR
-  P3 -->|data| XBAR
+    ARB -->|grant| P0
+    ARB -->|grant| P1
+    ARB -->|grant| P2
+    ARB -->|grant| P3
 
-  XBAR -->|data| O0
-  XBAR -->|data| O1
-  XBAR -->|data| O2
-  XBAR -->|data| O3
+    %% ---- DATA PATH ----
+    P0 -->|data| XBAR
+    P1 -->|data| XBAR
+    P2 -->|data| XBAR
+    P3 -->|data| XBAR
+
+    XBAR --> O0
+    XBAR --> O1
+    XBAR --> O2
+    XBAR --> O3
 ```
 ---
 
