@@ -382,6 +382,7 @@ Gate-level regression passed with full SDF back-annotation.
 make -f scripts/Makefile comp CUD=scripts/run.f
 make -f scripts/Makefile run
 make -f scripts/Makefile report
+```
 
 ## Synthesis
 
