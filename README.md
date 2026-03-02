@@ -41,22 +41,50 @@ Each port operates independently while arbitration resolves output contention fa
 
 ```mermaid
 flowchart LR
-    subgraph DUT["switch_4port (DUT)"]
-        P0["switch_port 0\n+ FIFO"]
-        P1["switch_port 1\n+ FIFO"]
-        P2["switch_port 2\n+ FIFO"]
-        P3["switch_port 3\n+ FIFO"]
+  %% ====== INPUT SIDE ======
+  subgraph IN["Input Ports (switch_port)"]
+    P0["Port 0\nFIFO + FSM"]
+    P1["Port 1\nFIFO + FSM"]
+    P2["Port 2\nFIFO + FSM"]
+    P3["Port 3\nFIFO + FSM"]
+  end
 
-        ARB["Round-Robin Arbiter"]
-        XBAR["Crossbar / Routing Logic"]
+  %% ====== CONTROL ======
+  ARB["Round-Robin Arbiter\n(per-output selection)"]
 
-        P0 --> ARB
-        P1 --> ARB
-        P2 --> ARB
-        P3 --> ARB
+  %% ====== DATA PATH ======
+  XBAR["Crossbar / Routing Matrix"]
 
-        ARB --> XBAR
-    end
+  %% ====== OUTPUT SIDE ======
+  subgraph OUT["Output Ports"]
+    O0["Out 0"]
+    O1["Out 1"]
+    O2["Out 2"]
+    O3["Out 3"]
+  end
+
+  %% Requests (control)
+  P0 -->|request| ARB
+  P1 -->|request| ARB
+  P2 -->|request| ARB
+  P3 -->|request| ARB
+
+  %% Grants (control)
+  ARB -->|grant| P0
+  ARB -->|grant| P1
+  ARB -->|grant| P2
+  ARB -->|grant| P3
+
+  %% Data path
+  P0 -->|data| XBAR
+  P1 -->|data| XBAR
+  P2 -->|data| XBAR
+  P3 -->|data| XBAR
+
+  XBAR -->|data| O0
+  XBAR -->|data| O1
+  XBAR -->|data| O2
+  XBAR -->|data| O3
 ```
 ---
 
