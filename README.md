@@ -23,6 +23,17 @@ The switch routes packets between four ports using a 4-bit destination mask and 
 
 ---
 
+## Implementation Flow (RTL → Gates → Physical)
+
+```mermaid
+flowchart LR
+  RTL["RTL (SystemVerilog)"] --> SDC["Constraints (SDC)"]
+  SDC --> SYN["Synthesis (Design Compiler)"]
+  SYN --> GLS["Gate-Level Simulation (SDF)"]
+  SYN --> PNR["Physical Implementation (Fusion Compiler)"]
+  PNR --> RPT["Timing/Area/Power Reports"]
+```
+
 # 1. RTL Architecture
 
 ## 1.1 System Architecture
@@ -92,6 +103,18 @@ ready_in = !fifo_full;
 - Guarantees zero packet loss  
 
 ### 4-State FSM
+
+## Port Controller FSM (switch_port)
+
+```mermaid
+stateDiagram-v2
+  [*] --> IDLE
+  IDLE --> RECEIVE: in_valid && ready_in
+  RECEIVE --> ROUTE: header available
+  ROUTE --> TRANSMIT: grant received
+  TRANSMIT --> ROUTE: multicast remaining_targets != 0
+  TRANSMIT --> IDLE: packet complete
+```
 
 States:
 - `IDLE`
@@ -166,6 +189,17 @@ Features:
 ---
 
 # 3. Verification Environment (Stage B)
+
+## Verification Environment (Block Diagram)
+
+```mermaid
+flowchart LR
+  SEQ["Sequencer<br/>Packet Generator"] --> DRV["Driver<br/>BFM"]
+  DRV -->|pin-level| DUT["switch_4port (DUT)"]
+  DUT --> MON["Monitor"]
+  MON --> SB["Scoreboard / Checker"]
+  MON --> COV["Functional Coverage"]
+```
 
 ## Verification Architecture
 
