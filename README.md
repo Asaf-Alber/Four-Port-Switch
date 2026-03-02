@@ -379,8 +379,9 @@ Gate-level regression passed with full SDF back-annotation.
 ## RTL Simulation
 
 ```bash
-make
-```
+make -f scripts/Makefile comp CUD=scripts/run.f
+make -f scripts/Makefile run
+make -f scripts/Makefile report
 
 ## Synthesis
 
