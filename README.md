@@ -80,6 +80,8 @@ flowchart LR
   ARB --> XBAR
   XBAR --> OUTPUTS
 ```
+Control path: input ports assert requests → arbiter generates grants.  
+Data path: granted input data is routed through the crossbar to the selected output(s).
 ---
 
 ## 1.2 Port Controller (`switch_port.sv`)
@@ -102,9 +104,10 @@ ready_in = !fifo_full;
 - Structurally prevents overflow  
 - Guarantees zero packet loss  
 
-### 4-State FSM
 
-## Port Controller FSM (switch_port)
+### Port Controller FSM
+
+The port FSM controls receive, arbitration wait, and transmit (including partial multicast completion).
 
 ```mermaid
 stateDiagram-v2
@@ -201,25 +204,6 @@ flowchart LR
   MON --> COV["Functional Coverage"]
 ```
 
-## Verification Architecture
-
-```mermaid
-flowchart LR
-    subgraph TB["Testbench"]
-        SEQ["Sequencer\n(Packet Generator)"]
-        DRV["Driver\n(BFM)"]
-        MON["Monitor"]
-        SB["Scoreboard"]
-        COV["Coverage"]
-
-        SEQ --> DRV
-        MON --> SB
-        MON --> COV
-    end
-
-    DRV -->|valid/data/source/target| DUT["switch_4port (DUT)"]
-    DUT -->|outputs| MON
-```
 
 A modular layered SystemVerilog verification architecture was implemented.
 
@@ -279,6 +263,12 @@ Verified properties:
 ---
 
 # 4. Synthesis & Physical Analysis (Stage C)
+
+## Fusion Compiler Flow (Physical Implementation)
+
+- Implemented a TCL-based FC run flow (read RTL/netlist, apply SDC, set libraries, compile/optimize).
+- Generated timing/area/power reports and reviewed QoR across baseline vs. clock-gated configurations.
+- Supported back-annotation and gate-level verification using synthesized netlist + SDF.
 
 Technology: SAED 90nm / 32nm  
 Tool: Synopsys Design Compiler  
