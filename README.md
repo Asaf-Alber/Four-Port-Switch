@@ -309,4 +309,8 @@ dc_shell -f run.tcl
 
 ```bash
 vcs +define+GLS ...
+<<<<<<< HEAD
 ```
+=======
+```
+>>>>>>> 8528adb (Final professional README)
