@@ -45,10 +45,10 @@ flowchart LR
     %% ===== INPUT PORTS =====
     subgraph INPUTS["Input Ports (switch_port)"]
         direction TB
-        P0["Port 0\nFIFO + FSM"]
-        P1["Port 1\nFIFO + FSM"]
-        P2["Port 2\nFIFO + FSM"]
-        P3["Port 3\nFIFO + FSM"]
+        P0["Port 0 \n FIFO + FSM"]
+        P1["Port 1 \n FIFO + FSM"]
+        P2["Port 2 \n FIFO + FSM"]
+        P3["Port 3 \n FIFO + FSM"]
     end
 
     %% ===== ARBITER =====
