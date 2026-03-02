@@ -42,7 +42,7 @@ Each port operates independently while arbitration resolves output contention fa
 ```mermaid
 flowchart LR
 
-  %% INPUT PORTS (force vertical alignment)
+  %% INPUT SIDE
   subgraph INPUTS["Input Ports (switch_port)"]
     direction TB
     P0["Port 0<br/>FIFO + FSM"]
@@ -51,9 +51,11 @@ flowchart LR
     P3["Port 3<br/>FIFO + FSM"]
   end
 
+  %% CORE LOGIC
   ARB["Round-Robin Arbiter"]
   XBAR["Crossbar / Routing Matrix"]
 
+  %% OUTPUT SIDE
   subgraph OUTPUTS["Output Ports"]
     direction TB
     O0["Out 0"]
@@ -62,27 +64,10 @@ flowchart LR
     O3["Out 3"]
   end
 
-  %% CONTROL (requests + grants)
-  P0 -->|req| ARB
-  P1 -->|req| ARB
-  P2 -->|req| ARB
-  P3 -->|req| ARB
-
-  ARB -->|grant| P0
-  ARB -->|grant| P1
-  ARB -->|grant| P2
-  ARB -->|grant| P3
-
-  %% DATA PATH (keep simple; avoid pulling one node)
-  P0 -->|data| XBAR
-  P1 -->|data| XBAR
-  P2 -->|data| XBAR
-  P3 -->|data| XBAR
-
-  XBAR --> O0
-  XBAR --> O1
-  XBAR --> O2
-  XBAR --> O3
+  %% FLOW
+  INPUTS --> ARB
+  ARB --> XBAR
+  XBAR --> OUTPUTS
 ```
 ---
 
