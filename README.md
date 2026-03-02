@@ -204,7 +204,6 @@ flowchart LR
   MON --> COV["Functional Coverage"]
 ```
 
-
 A modular layered SystemVerilog verification architecture was implemented.
 
 ## 3.1 Environment Structure
